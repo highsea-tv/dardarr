@@ -1,0 +1,8 @@
+{
+    "name": "@packages/components",
+    "version": "0.0.0",
+    "type": "module",
+    "private": true,
+    "main": "index.ts",
+    "files": ["./**/*"]
+}

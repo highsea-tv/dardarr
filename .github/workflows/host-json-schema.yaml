@@ -1,0 +1,37 @@
+name: Host JSON Schema Files
+
+on:
+
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload Files
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./packages/schema/json
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

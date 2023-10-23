@@ -1,0 +1,17 @@
+{
+    "title": "Localization",
+    "id": "https://raw.githubusercontent.com/inman-sebastian/Dardarr/main/packages/schema/json/l10n.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Dardarr localization schema",
+    "type": "object",
+    "properties": {
+        "install_page": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

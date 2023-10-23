@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "moduleResolution": "node",
+        "module": "esnext",
+        "target": "esnext",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "types": ["vite/client", "@packages/types"]
+    },
+    "include": ["../types"],
+    "exclude": ["**/*.config.js"]
+}

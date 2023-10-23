@@ -1,0 +1,6 @@
+{
+    "$schema": "https://inman-sebastian.github.io/Dardarr/l10n.json",
+    "install_page": {
+        "title": "Ceci est la page d'installation"
+    }
+}

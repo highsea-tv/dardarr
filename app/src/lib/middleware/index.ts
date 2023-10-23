@@ -1,0 +1,1 @@
+export { verifyInstall } from './verifyInstall';

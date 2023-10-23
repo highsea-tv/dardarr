@@ -1,0 +1,88 @@
+{
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+
+    /** ESLint settings */
+    "eslint.codeActionsOnSave.mode": "all",
+
+    /** Editor settings */
+    "editor.linkedEditing": true,
+    "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "blink",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+    },
+
+    /** Files to hide from search results */
+    "search.exclude": {
+        "node_modules": true,
+        ".svelte-kit": true,
+        "build": true
+    },
+
+    /** Material icon folder associations */
+    "material-icon-theme.folders.associations": {
+        "blitz-components": "container",
+        "blitz-config": "config",
+        "blitz-core": "core",
+        "blitz-documentation": "docs",
+        "blitz-integrations": "include",
+        "blitz-extension": "plugin",
+        "blitz-packages": "packages",
+        "blitz-plugins": "plugin",
+        "blitz-projects": "project",
+        "blitz-schema": "contract",
+        "blitz-sections": "layout",
+        "blitz-themes": "interface",
+        "blitz-types": "typescript",
+        "blitz-utils": "command"
+    },
+
+    /** Svelte settings */
+    "svelte.enable-ts-plugin": true,
+    "svelte.plugin.svelte.compilerWarnings": {
+        "unused-export-let": "ignore",
+        "missing-declaration": "ignore",
+        "css-unused-selector": "ignore",
+        "a11y-aria-attributes": "ignore",
+        "a11y-incorrect-aria-attribute-type": "ignore",
+        "a11y-unknown-aria-attribute": "ignore",
+        "a11y-hidden": "ignore",
+        "a11y-misplaced-role": "ignore",
+        "a11y-unknown-role": "ignore",
+        "a11y-no-abstract-role": "ignore",
+        "a11y-no-redundant-roles": "ignore",
+        "a11y-role-has-required-aria-props": "ignore",
+        "a11y-accesskey": "ignore",
+        "a11y-autofocus": "ignore",
+        "a11y-misplaced-scope": "ignore",
+        "a11y-positive-tabindex": "ignore",
+        "a11y-invalid-attribute": "ignore",
+        "a11y-missing-attribute": "ignore",
+        "a11y-img-redundant-alt": "ignore",
+        "a11y-label-has-associated-control": "ignore",
+        "a11y-media-has-caption": "ignore",
+        "a11y-distracting-elements": "ignore",
+        "a11y-structure": "ignore",
+        "a11y-mouse-events-have-key-events": "ignore",
+        "a11y-missing-content": "ignore"
+    },
+
+    /** CSS variable settings */
+    "cssVariables.lookupFiles": ["**/*.css", "**/*.postcss", "**/*.svelte"],
+    "css.completion.completePropertyWithSemicolon": true,
+    "css.completion.triggerPropertyValueCompletion": false,
+
+    /** Files to hide in the editor */
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/pnpm-lock.yaml": true
+    }
+}

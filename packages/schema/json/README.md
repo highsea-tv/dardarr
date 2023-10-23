@@ -1,0 +1,1 @@
+# Dardarr JSON Schema

@@ -1,0 +1,28 @@
+{
+    "Svelte Markup": {
+        "prefix": "svelte",
+        "description": "Bootstrap a new Svelte component",
+        "body": [
+            "$0",
+            "",
+            "<script lang=\"ts\">",
+            "\t",
+            "</script>",
+            "",
+            "<style lang=\"postcss\">",
+            "\t",
+            "</style>",
+            ""
+        ]
+    },
+    "Script": {
+        "prefix": "script",
+        "description": "Bootstrap a new Svelte script tag with TypeScript",
+        "body": ["<script lang=\"ts\">", "\t$0", "</script>"]
+    },
+    "Style": {
+        "prefix": "style",
+        "description": "Bootstrap a new Svelte style tag with PostCSS",
+        "body": ["<style lang=\"postcss\">", "\t$0", "</style>"]
+    }
+}

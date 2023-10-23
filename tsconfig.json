@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "allowJs": true,
+        "checkJs": true,
+        "moduleResolution": "node",
+        "module": "esnext",
+        "target": "esnext",
+        "esModuleInterop": true,
+        "allowArbitraryExtensions": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "types": ["vite/client", "@packages/types"],
+        "rootDirs": [".", "./packages/**/*", "./app/.svelte-kit/types"]
+    },
+    "exclude": ["./app"],
+    "include": ["./packages/**/*", "./app/src/**/*", "./app/.svelte-kit/types", "./app/.svelte-kit/ambient.d.ts"]
+}
