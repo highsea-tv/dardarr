@@ -57,6 +57,9 @@ importers:
       '@packages/styles':
         specifier: workspace:*
         version: link:packages/styles
+      '@packages/themes':
+        specifier: workspace:*
+        version: link:packages/themes
       '@packages/types':
         specifier: workspace:*
         version: link:packages/types
@@ -189,6 +192,8 @@ importers:
   packages/schema: {}
 
   packages/styles: {}
+
+  packages/themes: {}
 
   packages/types: {}
 

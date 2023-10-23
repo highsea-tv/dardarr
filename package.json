@@ -14,6 +14,7 @@
         "@packages/data": "workspace:*",
         "@packages/schema": "workspace:*",
         "@packages/styles": "workspace:*",
+        "@packages/themes": "workspace:*",
         "@packages/types": "workspace:*",
         "@packages/utilities": "workspace:*",
         "@sveltejs/adapter-node": "^1.3.1",
