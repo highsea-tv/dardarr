@@ -11,8 +11,8 @@ declare global {
      * Dardarr localization schema
      */
     export interface Localization {
-      install_page?: {
-        title?: string;
+      install_page: {
+        title: string;
       };
     }
   }

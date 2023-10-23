@@ -2,6 +2,5 @@
     "name": "@packages/styles",
     "version": "0.0.0",
     "type": "module",
-    "private": true,
-    "files": ["./**/**"]
+    "private": true
 }

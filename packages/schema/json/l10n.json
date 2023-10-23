@@ -11,7 +11,9 @@
                 "title": {
                     "type": "string"
                 }
-            }
+            },
+            "required": ["title"]
         }
-    }
+    },
+    "required": ["install_page"]
 }

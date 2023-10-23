@@ -3,7 +3,7 @@ export const actions = {
 
     system: async (event) => {
 
-        const { default: updateSystem } = await import('@packages/schema/updateSystem.sql')
+        const { default: updateSystem } = await import('@packages/schema/sql/updateSystem.sql')
         
         const formData = Object.fromEntries(await event.request.formData())
         console.log(formData)

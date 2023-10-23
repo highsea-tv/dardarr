@@ -18,6 +18,7 @@
         "@packages/config": "workspace:*",
         "@packages/core": "workspace:*",
         "@packages/data": "workspace:*",
+        "@packages/locales": "workspace:*",
         "@packages/schema": "workspace:*",
         "@packages/styles": "workspace:*",
         "@packages/themes": "workspace:*",
