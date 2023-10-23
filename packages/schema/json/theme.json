@@ -1,0 +1,18 @@
+{
+    "title": "Theme",
+    "id": "https://highsea-tv.github.io/dardarr/theme.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Dardarr theme schema",
+    "type": "object",
+    "properties": {
+        "primary_color": {
+            "description": "Primary color of the theme",
+            "type": "string"
+        },
+        "secondary_color": {
+            "description": "Secondary color of the theme",
+            "type": "string"
+        }
+    },
+    "required": ["primary_color", "secondary_color"]
+}

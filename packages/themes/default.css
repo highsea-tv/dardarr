@@ -1,0 +1,10 @@
+/*
+Theme Name: Default
+Author: Sebastian Inman
+Author URI: https://github.com/inman-sebastian
+Description: Default theme for the Dardarr application.
+*/
+
+:root {
+    --dd-body-background: #1C1D1F;
+}
