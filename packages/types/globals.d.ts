@@ -5,6 +5,8 @@ declare global {
     const INTEGRATIONS: typeof import('@packages/integrations')['integrations']
     const UTILITIES: typeof import('@packages/utilities')['utilities']
 
+    type Locale = keyof typeof import('@packages/locales')['locales']
+
     namespace App {
         
         type EventCallback = (event: CustomEvent) => void

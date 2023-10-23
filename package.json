@@ -6,8 +6,8 @@
         "dev:app": "pnpm --filter @dardarr/app run dev",
         "build:app": "pnpm --filter @dardarr/app run build",
         "preview:app": "pnpm --filter @dardarr/app run preview",
-        "watch:schema": "nodemon ./scripts/generate-json-schema-types.js",
-        "dev": "concurrently --kill-others --names app,schema \"pnpm run dev:app\" \"pnpm run watch:schema\"",
+        "generate:schema": "node ./scripts/generate-schema.js",
+        "dev": "concurrently --kill-others --names app,generate:schema \"pnpm run dev:app\" \"pnpm run generate:schema\"",
         "lint": "prettier --check . && eslint . && stylelint .",
         "format": "prettier --write . && eslint --fix . && stylelint --fix ."
     },

@@ -1,4 +1,4 @@
-<h1>This is the installation page</h1>
+<h1>{l10n('en', 'install_page.title')}</h1>
 
 <form method="POST" action="?/system" use:enhance>
 
@@ -6,13 +6,14 @@
         <Field.Component {field} />
     {/each}
 
-    <button type="submit">Submit</button>
+    <button type="submit">{l10n('fr', 'install_page.button')}</button>
 
 </form>
 
 <script lang="ts">
     
     import { enhance } from '$app/forms'
+    import { l10n } from '@packages/core/helpers'
     import { Field } from '@packages/core/models'
 
     const fields = {

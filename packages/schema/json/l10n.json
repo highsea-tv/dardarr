@@ -10,9 +10,12 @@
             "properties": {
                 "title": {
                     "type": "string"
+                },
+                "button": {
+                    "type": "string"
                 }
             },
-            "required": ["title"]
+            "required": ["title", "button"]
         }
     },
     "required": ["install_page"]
