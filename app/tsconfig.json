@@ -13,5 +13,6 @@
         "types": ["vite/client", "@packages/types"],
         "rootDirs": [".", "./.svelte-kit/types"],
     },
-    "include": ["../packages", "src/**/*", ".svelte-kit/types", ".svelte-kit/ambient.d.ts"]
+    "include": ["../packages", "src/**/*", ".svelte-kit/types", ".svelte-kit/ambient.d.ts"],
+    "exclude": ["../scripts"]
 }

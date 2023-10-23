@@ -5,6 +5,8 @@ import rawPlugin from 'vite-raw-plugin'
 
 import autoImport from 'unplugin-auto-import/vite'
 
+console.log(process.cwd())
+
 export default defineConfig({
     define: {
         cwd: JSON.stringify(process.cwd())

@@ -3,7 +3,13 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "generate:json-schema-types": "node ./utils/generate-json-schema-types.js"
+        "dev:app": "pnpm --filter @dardarr/app run dev",
+        "build:app": "pnpm --filter @dardarr/app run build",
+        "preview:app": "pnpm --filter @dardarr/app run preview",
+        "watch:schema": "nodemon ./scripts/generate-json-schema-types.js",
+        "dev": "concurrently --kill-others --names app,schema \"pnpm run dev:app\" \"pnpm run watch:schema\"",
+        "lint": "prettier --check . && eslint . && stylelint .",
+        "format": "prettier --write . && eslint --fix . && stylelint --fix ."
     },
     "devDependencies": {
         "@dardarr/app": "workspace:*",
@@ -26,6 +32,8 @@
         "@typescript-eslint/eslint-plugin": "^6.8.0",
         "@typescript-eslint/parser": "^6.8.0",
         "autoprefixer": "^10.4.16",
+        "chokidar": "^3.5.3",
+        "concurrently": "^8.2.2",
         "cssnano": "^6.0.1",
         "cssnano-preset-lite": "^3.0.0",
         "eslint": "^8.51.0",
@@ -34,6 +42,7 @@
         "eslint-plugin-svelte3": "^4.0.0",
         "glob": "^10.3.10",
         "json-schema-to-typescript": "^13.1.1",
+        "nodemon": "^3.0.1",
         "postcss": "^8.4.31",
         "postcss-import": "^15.1.0",
         "postcss-load-config": "^4.0.1",
@@ -52,6 +61,7 @@
         "vite": "^4.5.0",
         "vite-plugin-dts": "^3.6.0",
         "vite-plugin-mkcert": "^1.16.0",
+        "vite-plugin-watch": "^0.2.0",
         "vite-raw-plugin": "^1.0.2"
     },
     "dependencies": {
