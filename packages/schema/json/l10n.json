@@ -1,6 +1,6 @@
 {
     "title": "Localization",
-    "id": "https://raw.githubusercontent.com/inman-sebastian/Dardarr/main/packages/schema/json/l10n.json",
+    "id": "https://highsea-tv.github.io/dardarr/l10n.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Dardarr localization schema",
     "type": "object",
