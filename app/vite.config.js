@@ -48,7 +48,8 @@ export default defineConfig({
         autoImport({
             dts: resolve(process.cwd(), '../packages/types/auto-imports.d.ts'),
             imports: ['svelte', 'svelte/store', { 
-                '@packages/core': [['default', 'Dardarr']]
+                '@packages/core': [['default', 'Dardarr']],
+                '@packages/core/helpers': [['i18n', 'i18n']]
             }]
         }),
         sveltekit()

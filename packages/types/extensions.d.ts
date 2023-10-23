@@ -4,6 +4,6 @@ declare module '*.sql' {
 }
 
 declare module '@packages/locales/*.json' {
-    const content: Schema.Localization
+    const content: Schema.Internationalization
     export default content
 }

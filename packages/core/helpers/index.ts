@@ -1,3 +1,4 @@
 export { generateUniqueId } from '@packages/core/helpers/generateUniqueId';
-export { l10n } from '@packages/core/helpers/l10n';
+export { i18n } from '@packages/core/helpers/i18n';
 export { objectProp } from '@packages/core/helpers/objectProp';
+

@@ -9,7 +9,7 @@ import { locales } from '@packages/locales'
  * @param fallback - An optional fallback value to use if the translation is not found.
  * @returns The translated string or the fallback value if not found.
  */
-export function l10n(locale: Locale, translation: Translation, fallback?: string): string {
+export function i18n(locale: Locale, translation: Translation, fallback?: string): string {
     // Retrieve the language data for the specified locale.
     const language = locales[locale]
 

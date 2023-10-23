@@ -1,5 +1,5 @@
 {
-    "$schema": "https://highsea-tv.github.io/dardarr/l10n.json",
+    "$schema": "https://highsea-tv.github.io/dardarr/i18n.json",
     "install_page": {
         "title": "Ceci est la page d'installation"
     }

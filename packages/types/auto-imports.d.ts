@@ -14,6 +14,7 @@ declare global {
   const getAllContexts: typeof import('svelte')['getAllContexts']
   const getContext: typeof import('svelte')['getContext']
   const hasContext: typeof import('svelte')['hasContext']
+  const i18n: typeof import('@packages/core/helpers')['i18n']
   const onDestroy: typeof import('svelte')['onDestroy']
   const onMount: typeof import('svelte')['onMount']
   const readable: typeof import('svelte/store')['readable']

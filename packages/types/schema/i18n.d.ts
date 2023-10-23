@@ -10,7 +10,7 @@ declare global {
     /**
      * Dardarr localization schema
      */
-    export interface Localization {
+    export interface Internationalization {
       install_page: {
         title: string;
         button: string;
