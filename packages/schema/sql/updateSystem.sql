@@ -1,1 +1,1 @@
-INSERT OR REPLACE INTO System (id, language, timezone) VALUES (1, ?, ?);
+INSERT OR REPLACE INTO System (id, locale, timezone) VALUES (1, ?, ?);

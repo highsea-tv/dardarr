@@ -7,7 +7,10 @@
         "build:app": "pnpm --filter @dardarr/app run build",
         "preview:app": "pnpm --filter @dardarr/app run preview",
         "generate:schema": "node ./scripts/generate-schema.js",
-        "dev": "concurrently --kill-others --names app,generate:schema \"pnpm run dev:app\" \"pnpm run generate:schema\"",
+        "generate:types": "node ./scripts/generate-types.js",
+        "generate:imports": "node ./scripts/generate-imports.js",
+        "generate": "concurrently --kill-others --names schema,types,imports \"pnpm run generate:schema\" \"pnpm run generate:types\" \"pnpm run generate:imports\"",
+        "dev": "concurrently --kill-others --names app,generate \"pnpm run dev:app\" \"pnpm run generate\"",
         "lint": "prettier --check . && eslint . && stylelint .",
         "format": "prettier --write . && eslint --fix . && stylelint --fix ."
     },

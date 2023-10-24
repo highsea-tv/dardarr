@@ -1,0 +1,1 @@
+SELECT locale, timezone FROM System;

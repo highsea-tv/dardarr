@@ -4,9 +4,13 @@
  */
 
 import fr from "@packages/locales/fr.json";
+import es from "@packages/locales/es.json";
 import en from "@packages/locales/en.json";
+import de from "@packages/locales/de.json";
 
-export const themes = {
+export const locales = {
   fr,
+  es,
   en,
+  de,
 } as const;

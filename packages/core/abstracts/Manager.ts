@@ -15,6 +15,8 @@ export abstract class Manager<DataType, EventType extends EventEnum<EventType> =
     // Svelte store for the data map.
     public dataStore = writable(this.dataMap)
 
+    public abstract init(): Promise<void>
+
     /**
      * Updates the internal dataMap and dataStore based on the provided key and value.
      * 

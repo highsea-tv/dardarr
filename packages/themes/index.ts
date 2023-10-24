@@ -5,6 +5,6 @@
 
 import dardarr from "@packages/themes/dardarr.json";
 
-export const locales = {
+export const themes = {
   dardarr,
 } as const;

@@ -9,6 +9,7 @@ interface BaseFieldConfig<ValueType> {
     placeholder?: string
     disabled?: boolean
     readonly?: boolean
+    onchange?: (event: Event) => void | Promise<void>
 }
 
 interface TextFieldConfig extends BaseFieldConfig<string> {
@@ -97,12 +98,9 @@ export type FieldConfig =
     | SelectFieldConfig
     | TimezoneFieldConfig
 
-export class Field<ValueType = string> {
+export class Field {
 
     public readonly config: FieldConfig
-
-    public value: ValueType
-
     public static Component = FieldComponent
 
     public constructor(config: FieldConfig) {

@@ -1,4 +1,6 @@
-<h1>{i18n('en', 'install_page.title')}</h1>
+<h1>
+    <I18N prop="install_page.title" />
+</h1>
 
 <form method="POST" action="?/system" use:enhance>
 
@@ -6,11 +8,15 @@
         <Field.Component {field} />
     {/each}
 
-    <button type="submit">{i18n('en', 'install_page.button')}</button>
+    <button type="submit">
+        <I18N prop="install_page.button" />
+    </button>
 
 </form>
 
 <script lang="ts">
+
+    import I18N from '@packages/components/I18n.svelte'
     
     import { enhance } from '$app/forms'
     import { Field } from '@packages/core/models'
@@ -20,11 +26,17 @@
             name: 'language',
             label: 'Language',
             type: 'select',
-            value: 'en-US',
+            value: Dardarr.SystemManager.getLocale(),
             options: [
-                { value: 'en-US', label: 'English' },
-                { value: 'de-DE', label: 'German' },
+                { value: 'en', label: 'English' },
+                { value: 'es', label: 'Spanish' },
+                { value: 'fr', label: 'French' },
+                { value: 'de', label: 'German' },
             ],
+            async onchange(event) {
+                const { value } = (event.target as HTMLSelectElement)
+                await Dardarr.SystemManager.setLocale(value as Locale)
+            }
         }),
         timezone: new Field({
             name: 'timezone',
@@ -35,8 +47,9 @@
                 { value: 'America/Los_Angeles', label: 'America/Los_Angeles' },
                 { value: 'Europe/Berlin', label: 'Europe/Berlin' },
                 { value: 'Europe/London', label: 'Europe/London' },
-            ],
-        }),
+                { value: 'UTC', label: 'UTC' }
+            ]
+        })
     }
 
 </script>

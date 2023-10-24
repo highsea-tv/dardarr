@@ -46,8 +46,7 @@ declare global {
     }
 
     interface Window {
-        app: Dardarr
-        STATE: typeof STATE
+        Dardarr: typeof import('@packages/core')['default']
     }
 
 }

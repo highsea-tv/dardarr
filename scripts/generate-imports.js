@@ -37,7 +37,7 @@ import prettier from 'prettier'
                 output += `import ${locale} from '@packages/locales/${locale}.json'\n`
             }
 
-            output += `\nexport const themes = {\n`
+            output += `\nexport const locales = {\n`
 
             for (const localeFile of localeFiles) {
                 const locale = basename(localeFile).replace('.json', '')
@@ -74,7 +74,7 @@ import prettier from 'prettier'
                 output += `import ${theme} from '@packages/themes/${theme}.json'\n`
             }
 
-            output += `\nexport const locales = {\n`
+            output += `\nexport const themes = {\n`
 
             for (const themeFile of themeFiles) {
                 const theme = basename(themeFile).replace('.json', '')

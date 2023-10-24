@@ -1,0 +1,1 @@
+INSERT OR REPLACE INTO System (id, timezone) VALUES (1, ?);
