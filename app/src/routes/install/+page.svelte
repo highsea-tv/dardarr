@@ -22,10 +22,20 @@
     import { Field } from '@packages/core/models'
 
     const fields = {
+        toggle: new Field({
+            name: 'toggle',
+            label: 'Toggle',
+            type: 'toggle',
+            checked: true,
+            onchange(event) {
+                console.log(event)
+            }
+        }),
         language: new Field({
             name: 'language',
             label: 'Language',
             type: 'select',
+            placeholder: 'Select your language',
             value: Dardarr.SystemManager.getLocale(),
             options: [
                 { value: 'en', label: 'English' },

@@ -12,62 +12,60 @@ interface BaseFieldConfig<ValueType> {
     onchange?: (event: Event) => void | Promise<void>
 }
 
-interface TextFieldConfig extends BaseFieldConfig<string> {
+export interface TextFieldConfig extends BaseFieldConfig<string> {
     type: 'text'
 }
 
-interface TextareaFieldConfig extends BaseFieldConfig<string> {
+export interface TextareaFieldConfig extends BaseFieldConfig<string> {
     type: 'textarea'
 }
 
-interface EmailFieldConfig extends BaseFieldConfig<string> {
+export interface EmailFieldConfig extends BaseFieldConfig<string> {
     type: 'email'
 }
 
-interface URLFieldConfig extends BaseFieldConfig<string> {
+export interface URLFieldConfig extends BaseFieldConfig<string> {
     type: 'url'
 }
 
-interface ColorFieldConfig extends BaseFieldConfig<string> {
+export interface ColorFieldConfig extends BaseFieldConfig<string> {
     type: 'color'
 }
 
-interface PasswordFieldConfig extends BaseFieldConfig<string> {
+export interface PasswordFieldConfig extends BaseFieldConfig<string> {
     type: 'password'
 }
 
-interface NumberFieldConfig extends BaseFieldConfig<number> {
+export interface NumberFieldConfig extends BaseFieldConfig<number> {
     type: 'number'
     min?: number
     max?: number
     step?: number
 }
 
-interface RangeFieldConfig extends BaseFieldConfig<number> {
+export interface RangeFieldConfig extends BaseFieldConfig<number> {
     type: 'range'
     min?: number
     max?: number
     step?: number
 }
 
-interface CheckboxFieldConfig extends BaseFieldConfig<boolean> {
+export interface CheckboxFieldConfig extends BaseFieldConfig<boolean> {
     type: 'checkbox'
     checked?: boolean
 }
 
-interface RadioFieldConfig extends BaseFieldConfig<boolean> {
+export interface RadioFieldConfig extends BaseFieldConfig<boolean> {
     type: 'radio'
     checked?: boolean
 }
 
-interface ToggleFieldConfig extends BaseFieldConfig<boolean> {
+export interface ToggleFieldConfig extends BaseFieldConfig<boolean> {
     type: 'toggle'
     checked?: boolean
-    checked_label?: string
-    unchecked_label?: string
 }
 
-interface SelectFieldConfig extends BaseFieldConfig<string> {
+export interface SelectFieldConfig extends BaseFieldConfig<string> {
     type: 'select'
     multiple?: boolean
     options: Array<{ 
@@ -78,7 +76,7 @@ interface SelectFieldConfig extends BaseFieldConfig<string> {
     }>
 }
 
-interface TimezoneFieldConfig extends BaseFieldConfig<string> {
+export interface TimezoneFieldConfig extends BaseFieldConfig<string> {
     type: 'timezone'
 }
 
