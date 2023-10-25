@@ -1,5 +1,5 @@
-<label for={field.config.id} class="dd-field {field.config.type}">
-    <span class="dd-field-label">{field.config.label}</span>
+<div class="dd-field {field.config.type}">
+    <label for={field.config.id} class="dd-field-label">{field.config.label}</label>
     {#if field.config.type === 'text'}
         <input class="dd-field-input field-text" id={field.config.id} name={field.config.name} bind:value={field.config.value} type="text" />
     {/if}
@@ -12,10 +12,11 @@
         <FieldToggle bind:config={field.config} />
     {/if}
 
-</label>
+</div>
 
 <script lang="ts">
     import type { Field } from '@packages/core/models'
+    
     import FieldSelect from './FieldSelect.svelte'
     import FieldToggle from './FieldToggle.svelte'
 
@@ -24,9 +25,10 @@
 
 <style lang="postcss">
     .dd-field {
-        display: flex;
+        align-items: flex-start;
         flex-direction: column;
         width: max-content;
+        display: flex;
         gap: 0.25rem;
 
         &-label {

@@ -1,5 +1,5 @@
-<span class="dd-field-select-wrapper" style="--dropdown-width:{dropdownWidth}px;" aria-expanded={opened}>
-    <button type="button" class="dd-field-select-button" on:click={() => opened = !opened}>
+<div class="dd-field-select-wrapper" style="--dropdown-width:{dropdownWidth}px;" aria-dropeffect="popup" aria-valuetext={String(opened)}>
+    <button bind:this={toggleButton} type="button" id={config.id} class="dd-field-select-button" aria-pressed={opened} aria-haspopup="menu" on:click={toggleDropdown}>
         <span class="dd-field-select-button-label">{selected.label}</span>
         <span class="dd-field-select-button-icon">
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
@@ -7,11 +7,11 @@
             </svg>
         </span>
     </button>
-    <span class="dd-field-select-options" bind:clientWidth={dropdownWidth}>
-        {#each config.options as option}
-            <button type="button" class="dd-field-select-option" 
+    <div bind:this={dropdownMenu} id="{config.id}-options" class="dd-field-select-options" role="menu" bind:clientWidth={dropdownWidth}>
+        {#each config.options as option, i}
+            <button type="button" class="dd-field-select-option" role="menuitem"
             on:click={(event) => handleChange(event, option.value)} 
-            aria-selected={selected.value === option.value}>
+            aria-current={selected.value === option.value}>
                 <span class="dd-field-select-option-icon">
                     {#if selected.value === option.value}
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -22,8 +22,8 @@
                 <span>{option.label}</span>
             </button>
         {/each}
-    </span>
-</span>
+    </div>
+</div>
 
 <script lang="ts">
     import type { SelectFieldConfig } from '@packages/core/models/Field'
@@ -33,51 +33,82 @@
     $: dropdownWidth = 0
     $: opened = false
 
+    let toggleButton: HTMLButtonElement
+    let dropdownMenu: HTMLElement
+
+    function toggleDropdown() {
+        opened = !opened
+    }
+
     function handleChange(event: Event, value: string) {
         (event.target as any).value = value
         config.value = value
         opened = false
-        config.onchange(event)
+        config.onchange && config.onchange(event)
     }
 
 </script>
 
 <style lang="postcss">
     .dd-field-select-wrapper {
-        border: 1px solid #AAA;
         border-radius: 0.25rem;
         flex-direction: column;
         min-width: max-content;
-        background: #CCC;
+        background: #323741;
         position: relative;
         display: flex;
+        margin: 2px 0;
         padding: 0;
         z-index: 1;
 
         .dd-field-select-button,
         .dd-field-select-option {
+            background-color: transparent;
             min-width: max-content;
+            border-radius: 0.25rem;
             flex-direction: row;
             align-items: center;
-            padding: 0 0.75rem;
+            padding: 0 0.625rem;
+            white-space: nowrap;
             text-align: left;
             cursor: pointer;
             height: 2.5rem;
             display: flex;
             border: none;
             width: 100%;
+            margin: 0;
+
+            svg {
+                fill: currentColor;
+            }
+
         }
 
         .dd-field-select-button {
+            transition-property: outline, box-shadow;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 0.2s;
             min-width: var(--dropdown-width, max-content);
             justify-content: space-between;
-            border-radius: 0.25rem;
+            outline: 2px solid #484d5a;
+            color: #fefefe;
             gap: 0.75rem;
         }
 
         .dd-field-select-option {
+            transition-property: color, background-color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 0.2s;
+            height: calc(2.5rem + 4px);
             padding-right: 3rem;
+            color: #b0b8cc;
             gap: 0.365rem;
+
+            &:hover,
+            &:focus-within {
+                background-color: #2a2e35;
+                color: #fefefe;
+            }
 
             &:last-of-type {
                 border-bottom-right-radius: 0.25rem;
@@ -111,29 +142,42 @@
         }
 
         .dd-field-select-options {
-            border-bottom-right-radius: 0.25rem;
-            border-bottom-left-radius: 0.25rem;
-            box-shadow: 0 0 0 1px #AAA;
+            transition-property: transform, opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 0.2s;
+            transform: translate3d(0, 6px, 0);
+            outline: 2px solid #484d5a;
+            border-radius: 0.25rem;
             flex-direction: column;
-            top: calc(100% + 1px);
             pointer-events: none;
+            background: #323741;
             position: absolute;
-            background: #AAA;
+            padding: 0.625rem;
             list-style: none;
             display: flex;
             z-index: 10;
-            padding: 0;
             opacity: 0;
             margin: 0;
-            gap: 1px;
+            top: 100%;
+            gap: 0;
         }
 
-        &[aria-expanded="true"] {
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-            z-index: 2;
+        &:focus-within {
 
-            .dd-field-select-options {
+            .dd-field-select-button {
+                box-shadow: 0 0 0 6px #21356a;
+                outline-color: #1f5eff;
+            }
+        }
+
+        &[aria-valuetext="true"] {
+            z-index: 10;
+        }
+
+        .dd-field-select-button[aria-pressed="true"] {
+
+            + .dd-field-select-options {
+                transform: translate3d(0, 12px, 0);
                 pointer-events: all;
                 opacity: 1;
             }
