@@ -5,14 +5,49 @@
     "description": "Dardarr theme schema",
     "type": "object",
     "properties": {
-        "primary_color": {
-            "description": "Primary color of the theme",
+        "name": {
             "type": "string"
         },
-        "secondary_color": {
-            "description": "Secondary color of the theme",
-            "type": "string"
+        "colors": {
+            "description": "Primary color of the theme",
+            "type": "object",
+            "properties": {
+                "50": {
+                    "type": "string"
+                },
+                "100": {
+                    "type": "string"
+                },
+                "200": {
+                    "type": "string"
+                },
+                "300": {
+                    "type": "string"
+                },
+                "400": {
+                    "type": "string"
+                },
+                "500": {
+                    "type": "string"
+                },
+                "600": {
+                    "type": "string"
+                },
+                "700": {
+                    "type": "string"
+                },
+                "800": {
+                    "type": "string"
+                },
+                "900": {
+                    "type": "string"
+                },
+                "950": {
+                    "type": "string"
+                }
+            },
+            "required": ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"]
         }
     },
-    "required": ["primary_color", "secondary_color"]
+    "required": ["name", "colors"]
 }

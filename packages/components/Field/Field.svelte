@@ -1,7 +1,17 @@
 <div class="dd-field {field.config.type}">
+
     <label for={field.config.id} class="dd-field-label">{field.config.label}</label>
+
     {#if field.config.type === 'text'}
-        <input class="dd-field-input field-text" id={field.config.id} name={field.config.name} bind:value={field.config.value} type="text" />
+        <FieldText bind:config={field.config} />
+    {/if}
+
+    {#if field.config.type === 'password'}
+        <FieldText bind:config={field.config} />
+    {/if}
+
+    {#if field.config.type === 'textarea'}
+        <FieldTextarea bind:config={field.config} />
     {/if}
 
     {#if field.config.type === 'select'}
@@ -18,6 +28,8 @@
     import type { Field } from '@packages/core/models'
     
     import FieldSelect from './FieldSelect.svelte'
+    import FieldText from './FieldText.svelte'
+    import FieldTextarea from './FieldTextarea.svelte'
     import FieldToggle from './FieldToggle.svelte'
 
     export let field: Field
@@ -27,19 +39,16 @@
     .dd-field {
         align-items: flex-start;
         flex-direction: column;
-        width: max-content;
+        margin-bottom: 1.625rem;
         display: flex;
-        gap: 0.25rem;
+        gap: 0.75rem;
+        width: 100%;
 
         &-label {
-            font-size:   var(--dd-field-label-font-size, 0.875rem);
+            font-size:   var(--dd-field-label-font-size, 0.925rem);
             font-weight: var(--dd-field-label-font-weight, 500);
             line-height: var(--dd-field-label-line-height, 1.25rem);
-        }
-
-        &-input {
-            display: flex;
-            flex-direction: column;
+            color: hsla(var(--zinc-400), 1);
         }
 
     }

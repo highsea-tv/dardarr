@@ -1,5 +1,6 @@
 {
     "$schema": "https://highsea-tv.github.io/dardarr/i18n.json",
+    "language": "Deutsch",
     "install_page": {
         "title": "Dies ist die Installationsseite",
         "button": "Weitermachen"

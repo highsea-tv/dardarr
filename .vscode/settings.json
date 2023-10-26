@@ -84,5 +84,13 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "**/pnpm-lock.yaml": true
-    }
+    },
+    "colorize.include": [
+        "**/*.json",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl"
+    ]
 }

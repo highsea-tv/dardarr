@@ -5,6 +5,9 @@
     "description": "Dardarr localization schema",
     "type": "object",
     "properties": {
+        "language": {
+            "type": "string"
+        },
         "install_page": {
             "type": "object",
             "properties": {

@@ -12,6 +12,7 @@
         "stylelint.vscode-stylelint",
         "ms-azuretools.vscode-docker",
         "ms-vscode-remote.remote-containers",
-        "qwtel.sqlite-viewer"
+        "qwtel.sqlite-viewer",
+        "kamikillerto.vscode-colorize"
     ]
 }

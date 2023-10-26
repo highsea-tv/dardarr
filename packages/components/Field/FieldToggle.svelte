@@ -33,17 +33,17 @@
             top: 0;
 
             &:checked + .dd-field-toggle-input {
-                background-color: var(--dd-color-primary, red);
+                background-color: hsla(var(--dd-theme-color-600), 1);
 
                 &::after {
-                    transform: translate3d(0, 0, 0);
+                    transform: translate3d(-1px, 0, 0);
                 }
 
             }
 
             &:focus + .dd-field-toggle-input {
+                box-shadow: 0 0 0 5px hsla(var(--dd-theme-color-600), 0.365);
                 outline: none;
-                box-shadow: 0 0 0 0.25rem rgba(255,0,0,0.25);
             }
 
         }
@@ -52,24 +52,23 @@
 
     .dd-field-toggle-input {
         background-color: var(--dd-color-primary, #CCC);
-        box-sizing: border-box;
-        width: 2.75rem;
+        justify-content: flex-start;
         border-radius: 2rem;
         align-items: center;
-        justify-content: flex-start;
-        padding: 0.125rem;
+        width: 2.75rem;
         display: flex;
+        padding: 2px;
 
         &::after {
             content: '';
             transition-timing-function: var(--dd-field-toggle-transition-timing-function);
             transition-duration: var(--dd-field-toggle-transition-duration);
             transition-property: transform;
-            transform: translate3d(-100%, 0, 0);
+            transform: translate3d(calc(-100% + 1px), 0, 0);
             background-color: white;
             pointer-events: none;
-            position: relative;
             border-radius: 100%;
+            position: relative;
             aspect-ratio: 1/1;
             height: 1.25rem;
             display: block;

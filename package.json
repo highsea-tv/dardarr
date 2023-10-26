@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "@dardarr/app": "workspace:*",
+        "@iconify/svelte": "^3.1.4",
         "@packages/apps": "workspace:*",
         "@packages/components": "workspace:*",
         "@packages/config": "workspace:*",

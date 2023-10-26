@@ -5,10 +5,12 @@ interface BaseFieldConfig<ValueType> {
     id?: string
     name: string
     label: string
+    icon?: string
     value?: ValueType
     placeholder?: string
     disabled?: boolean
     readonly?: boolean
+    required?: boolean
     onchange?: (event: Event) => void | Promise<void>
 }
 
@@ -71,6 +73,8 @@ export interface SelectFieldConfig extends BaseFieldConfig<string> {
     options: Array<{ 
         value: string 
         label: string
+        icon?: string
+        iconText?: string
         readonly?: boolean
         disabled?: boolean
     }>

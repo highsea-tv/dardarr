@@ -24,5 +24,28 @@
         "prefix": "style",
         "description": "Bootstrap a new Svelte style tag with PostCSS",
         "body": ["<style lang=\"postcss\">", "\t$0", "</style>"]
+    },
+    "Theme": {
+        "prefix": "theme",
+        "description": "Bootstrap a new theme",
+        "body": [
+            "{",
+            "\t\"$schema\": \"https://highsea-tv.github.io/dardarr/theme.json\",",
+            "\t\"name\": \"$1\",",
+            "\t\"colors\": {",
+            "\t\t\"50\": \"$2\",",
+            "\t\t\"100\": \"$3\",",
+            "\t\t\"200\": \"$4\",",
+            "\t\t\"300\": \"$5\",",
+            "\t\t\"400\": \"$6\",",
+            "\t\t\"500\": \"$7\",",
+            "\t\t\"600\": \"$8\",",
+            "\t\t\"700\": \"$9\",",
+            "\t\t\"800\": \"$10\",",
+            "\t\t\"900\": \"$11\",",
+            "\t\t\"950\": \"$12\""
+            "\t}",
+            "}"
+        ]
     }
 }

@@ -1,5 +1,6 @@
 import AppManager from '@packages/core/managers/AppManager'
 import SystemManager from '@packages/core/managers/SystemManager'
+import { themes } from '@packages/themes'
 
 class Dardarr {
 
@@ -8,6 +9,8 @@ class Dardarr {
 
     public static SystemManager = SystemManager
     public static AppManager = AppManager
+
+    public static theme = themes.amber
 
     public static async Connect() {
 

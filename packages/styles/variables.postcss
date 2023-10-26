@@ -1,12 +1,47 @@
 :root {
-    --dd-field-label-font-size: 0.875rem;
+    --dd-field-label-font-size: 0.925rem;
     --dd-field-label-font-weight: 500;
-    --dd-field-label-line-height: 1.25rem;
+    --dd-field-label-line-height: 1;
     --dd-field-toggle-transition-duration: 0.15s;
     --dd-field-toggle-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --zinc-50: 240, 0%, 98%;
+    --zinc-100: 240, 5%, 96%;
+    --zinc-200: 240, 6%, 90%;
+    --zinc-300: 240, 5%, 84%;
+    --zinc-400: 240, 5%, 65%;
+    --zinc-500: 240, 4%, 46%;
+    --zinc-600: 240, 5%, 34%;
+    --zinc-700: 240, 5%, 26%;
+    --zinc-800: 240, 4%, 16%;
+    --zinc-900: 240, 6%, 10%;
+    --zinc-950: 240, 10%, 4%;
+
+
 
 }
 
+@keyframes autofill {
+    0%, 100% {
+        background: transparent;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: hsla(var(--dd-theme-color-500), 1);
+    color: hsla(var(--dd-theme-color-50), 1);
+}
+
+* {
+    font-family: Poppins, sans-serif;
+}
+
 body {
-    background-color: #22242a;
+    background-color: hsla(var(--zinc-900), 1);
+    color: hsla(var(--zinc-100), 1);
 }
